@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4kmn$^yn#7!^$#i+&%(qug15(_+bnd$v%9zmg^72w!tk4q)n60'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['moviesapiapp.herokuapp.com',]
 
@@ -143,3 +143,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100
 }
+
+try:
+    from .settings_dev import *
+except ImportError:
+    pass
