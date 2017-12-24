@@ -16,6 +16,7 @@ from .permissions import IsAdmin
 class RegisterAPIView(APIView):
 
     permission_classes = []
+    authentication_classes = []
 
     def post(self, request):
         serializer = UserRegisterSerializer(data=request.data)
